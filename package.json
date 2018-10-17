@@ -1,5 +1,5 @@
 {
-  "name": "pace-progress",
+  "name": "pace-progressbar",
   "version": "1.0.2",
   "description": "Automatic page load progress bar",
   "authors": [
@@ -10,7 +10,7 @@
   "main": "pace.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/HubSpot/pace.git"
+    "url": "git://github.com/z1m1n/pace.git"
   },
   "devDependencies": {
     "grunt-contrib-coffee": "~0.7.0",
@@ -20,5 +20,10 @@
     "grunt": "~0.4.1",
     "grunt-contrib-watch": "~0.5.3",
     "color": "~0.4.4"
-  }
+  },
+  "keywords": [
+    "pace",
+    "loader",
+    "progressbar"
+  ]
 }
