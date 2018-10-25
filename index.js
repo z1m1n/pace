@@ -243,9 +243,9 @@
           throw new NoTargetError;
         }
         this.el = document.createElement('div');
-        this.el.className = "pace pace-active";
-        document.body.className = document.body.className.replace(/pace-done/g, '');
-        document.body.className += ' pace-running';
+        this.el.classList.add('pace', 'pace-active');
+        document.body.classList.remove('pace-done');
+        document.body.classList.add('pace-running');
         this.el.innerHTML = '<div class="pace-progress">\n  <div class="pace-progress-inner"></div>\n</div>\n<div class="pace-activity"></div>';
         if (targetElement.firstChild != null) {
           targetElement.insertBefore(this.el, targetElement.firstChild);
@@ -259,10 +259,10 @@
     Bar.prototype.finish = function() {
       var el;
       el = this.getElement();
-      el.className = el.className.replace('pace-active', '');
-      el.className += ' pace-inactive';
-      document.body.className = document.body.className.replace('pace-running', '');
-      return document.body.className += ' pace-done';
+      el.classList.remove('pace-active');
+      el.classList.add('pace-inactive');
+      document.body.classList.remove('pace-running');
+      return document.body.classList.add('pace-done');
     };
 
     Bar.prototype.update = function(prog) {
@@ -280,6 +280,7 @@
     };
 
     Bar.prototype.render = function() {
+      
       var el, key, progressStr, transform, _j, _len1, _ref2;
       if (document.querySelector(options.target) == null) {
         return false;
